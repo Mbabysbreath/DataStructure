@@ -119,7 +119,7 @@ public class Test {
         Node temp1=head1;
         Node temp2=head2.next;
 
-        while (temp1.next != null && temp2 != null) {
+        while (temp1.next != null &&  temp2 != null) {
             if (temp1.next.value <= temp2.value) {
                 temp1=temp1.next;
             }else{
