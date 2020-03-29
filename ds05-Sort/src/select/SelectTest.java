@@ -22,16 +22,18 @@ public class SelectTest {
     public static void select(int[] arr) {
 
         for(int i=0;i<arr.length-1;i++) {
-            int min=i;
-            int minArr=arr[min];
-            for(int j=i+1;j<arr.length-1;j++) {
-                if (arr[min] > arr[j]) {
-                    min=j;
-                    minArr=arr[j];
+            int minIndex=i;
+            int min=arr[i];
+            for(int j=i+1;j<arr.length;j++) {
+                if (min > arr[j]) {
+                    minIndex=j;
+                    min=arr[j];
                 }
             }
-            if(min!=i){
-                arr[i]=minArr;
+            //交换
+            if(minIndex!=i){
+                arr[minIndex]=arr[i];
+                arr[i]=min;
             }
         }
        // System.out.println(Arrays.toString(arr));
