@@ -18,6 +18,7 @@ public class Test {
         Node n5 = new Node(5, 2);
         Node n6 = new Node(6, 3);
         head.next=n1;n1.next=n2;n2.next=n3;
+
         head1.next=n4;n4.next=n5;n5.next=n6;
         int length = obj.getLength(head);
         System.out.println(length);
@@ -134,6 +135,25 @@ public class Test {
         }
         return head1;
 
+    }
+    public Node reverseList(Node head) {
+        if(head==null){
+            return null;
+        }
+        Stack<Node> stack=new Stack<>();
+        Node cur=head;
+        while(cur!=null){
+            stack.push(cur);
+            cur=cur.next;
+        }
+        Node newhead=stack.pop();
+        Node cur1=newhead;
+        while(!stack.isEmpty()){
+            cur1.next=stack.pop();
+            cur1=cur1.next;
+        }
+        cur1.next=null;
+        return newhead;
     }
     public void show(Node head){
         Node temp=head.next;
